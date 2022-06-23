@@ -54,3 +54,13 @@ alert(age);
     var c= a - b;
 
     console.log(c);
+
+/* Toán tử gán
+    Toán tử        Ví dụ       Tương đương
+    =              x = y       x = y
+    +=             x += y      x = x + y
+    -=             x -= y      x = x - y
+    *=             x *= y      x = x * y
+    /=             x /= y      x = x / y
+    **=            x **= y     x = x ** y
+ */
