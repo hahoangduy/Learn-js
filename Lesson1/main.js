@@ -172,5 +172,59 @@ Kiểu dữ liệu trong Javascript
 
         var fullName ='Hoang Duy';
 
-    // Boolean
+    // Boolean type
         var isSuccess = true;
+
+    // Undefined type
+        var age;
+
+    // Null type
+        var isNull = null;
+
+    // Symbol type
+        var id = Symbol('id');
+    
+    // Function type
+        var myFunction = function() {
+            console.log('Hello'); 
+        }
+        myFunction();
+
+    // Object types
+        var myObject = {
+            name: 'HoangDuy',
+            age: 16,
+            address: 'Dak Mil'
+        };
+
+    /* Cách kiểm tra kiểu dữ liệu
+        console.log(typeof ...)
+    */
+
+    // Toán tử so sánh - P2
+    
+    /**
+     * === 
+     * !==
+     */
+
+        var a = 1;
+        var b = '1';
+        console.log(a === b);
+        
+        var a = '1';
+        var b = 1;
+        console.log(a !== b);
+
+    // Hiểu hơn về câu lệnh điều kiện và phép so sánh
+
+        var a = 1;
+        var b = 2;
+
+        var result = a < b;
+
+        if (a < b) {
+            console.log('A < B');
+        } else {
+            console.log('A > B');
+        }
