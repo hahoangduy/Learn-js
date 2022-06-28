@@ -95,3 +95,82 @@
         c = 2;
     }
     console.log(c)
+
+/**
+    * Boolean
+    */
+
+     var a = 1;
+     var b = 2;
+
+    var isSuccess = a > b;
+    console.log(isSuccess);
+
+ /**
+     * If - Else
+    */
+     var isSuccess = a > b
+        if(isSuccess) {
+            console.log('Dieu kien dung')
+        } else {
+            console.log('Dieu kien sai')
+        }
+
+        // Số chẵn là số khi chia cho 2 sẽ có phần dư là 0
+// Số lẻ là số khi chia cho 2 sẽ có phần dư là 1
+
+// Khai báo biến number, và gán trá trị cho biến number
+var number = 13;
+
+// Sử dụng toán tử % để lấy ra phần dư của number khi chia cho 2
+// Khai báo biến remian ,và gán phần dư cho biến đặt tên là remain
+var remain = number % 2
+
+// Sử dụng toán tử so sánh === để thực hiện so sánh biến remain với 1
+// Khai báo biến isOdd, và gán kết quả so sánh cho biến isOdd
+var isOdd = remain === 1;
+
+// In giá trị của biến isOdd ra cửa sổ console của trình duyệt
+console.log(isOdd) // Output: ?
+    
+
+/**
+    * Toán tử Logi
+    * 1. && - And
+    * 2. || - Or
+    * 3. ! - Not
+    */
+
+      var a = 1;
+      var b = 2;
+      var c = 3;
+      
+    if(a > 0 && b > 0) {
+        console.log('Đúng')
+    }
+
+/*
+Kiểu dữ liệu trong Javascript
+
+    1. Dữ liệu nguyên thủy - Primitive Data
+        - Number
+        - String
+        - Boolean
+        - Undefined
+        - Null
+        - Symbol
+    2. Dữ liệu phức tạp - Complex Data
+        - Function
+        - Object
+*/
+    // Number type
+
+        var a = 1;
+        var b = 2;
+        var c = 3;
+    // String type
+
+        var fullName ='Hoang Duy';
+
+    // Boolean
+        var isSuccess = true;
