@@ -50,7 +50,7 @@
 
     var a = 1;
     var b = 2;
-    
+     a = 3
     var c= a - b;
 
     console.log(c);
@@ -197,6 +197,19 @@ Kiểu dữ liệu trong Javascript
             address: 'Dak Mil'
         };
 
+        var myArray = [
+            'Javascript',
+            'PHP',
+            'Ruby',
+        ];
+
+        console.log(myArray)
+        console.log('========================================')
+        console.log(myObject.name)
+        myObject.name= 'Hoang Duc'
+        console.log(myObject.name)
+        console.log(myObject)
+        console.log('========================================')
     /* Cách kiểm tra kiểu dữ liệu
         console.log(typeof ...)
     */
