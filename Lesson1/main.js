@@ -249,3 +249,57 @@ Kiểu dữ liệu trong Javascript
             console.log('hello cac ban');
         }
             showDialog();
+
+    // Tham số hàm - Javascript cơ bản
+
+    /* 
+        1. Tham số ?
+            - Định nghĩa ?
+            - Kiểu dữ liệu ?
+            - Tính Private ?
+            - 1 tham số
+            - Nhiều tham số
+        2. Truyền tham số
+            - 1 tham số 
+            - Nhiều tham số
+        3. Aruments ?
+            - Đối tượng Arguments
+            - Giới thiệu vòng for of
+    */
+
+            //  function writeLog(message) {
+            //     console.log(message)
+            // }
+
+            // writeLog('Test message');
+
+            // function writeLog() {
+            //     console.log(arguments)
+            // }
+
+            // writeLog('Log 1, Log 2');
+
+            function writeLog() {
+                for (var param of arguments) {
+                    console.log(param)
+                }
+            }
+
+            writeLog('Log 1', 'Log 2', 'Log 3')
+
+            // Return trong hàm - Javacript cơ bản
+                function cong(a, b) {
+                    return a + b;
+                }
+
+                var result = cong(2, 8);
+
+                console.log(result)
+
+     /*
+        Các loại function
+
+        1. Declaration function
+        2. Expresstion function
+        3. Arrow function
+     */
