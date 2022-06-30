@@ -96,6 +96,16 @@
         - Độ dài mảng
         - Lấy phần tử theo index
     */
+        var languages = [
+            'Javascript',
+            'PHP',
+            'Ruby',
+        ];
+
+        console.log(languages);
+        // console.log(Array.isArray(languages));
+        // console.log(languages.length)
+        // console.log(languages[0])
 
         // function isNumber(value) {
         //     var a = typeof value
@@ -113,13 +123,110 @@
         // console.log(isNumber('abc')); // false
         // console.log(isNumber('100')); // false
 
-        var a = 10;
-        var b = 5;
-        var c
+        // var a = 10;
+        // var b = 5;
+        // var c
 
-        c = a
-        a = b
-        b = c
+        // c = a
+        // a = b
+        // b = c
        
-        console.log(a);
-        console.log(b);
+        // console.log(a);
+        // console.log(b);
+
+
+        /*
+            Làm việc với Array
+
+            1. To string
+            2. Join
+            3. Pop
+            4. Push
+            5. Shift
+            6. Unshift
+            7. Splicing
+            8. Concat
+            9. Slicing
+            */
+
+            var languages = [
+                'Javascript',
+                'PHP',
+                'Ruby',
+            ];
+            console.log(languages.toString())
+            
+
+            var languages = [
+                'Javascript',
+                'PHP',
+                'Ruby',
+            ];
+            console.log(languages.join(' - '))
+
+
+            var languages = [
+                'Javascript',
+                'PHP',
+                'Ruby',
+            ];
+            console.log(languages.pop()) // Xóa elenment cuối mảng và trả về phần tử đã xóa 
+            console.log(languages)
+
+
+            var languages = [
+                'Javascript',
+                'PHP',
+                'Ruby',
+            ];
+            console.log(languages.push('Dart', 'Java')) // Thêm element vào cuối mảng
+            console.log(languages)
+
+
+            var languages = [
+                'Javascript',
+                'PHP',
+                'Ruby',
+            ];
+            console.log(languages.shift()) // Xóa element đầu của mảng
+            console.log(languages)
+
+
+            var languages = [
+                'Javascript',
+                'PHP',
+                'Ruby',
+            ];
+            console.log(languages.unshift('Dart')) // Thêm element vào đầu mảng
+            console.log(languages)
+
+
+            var languages = [
+                'Javascript',
+                'PHP',
+                'Ruby',
+            ];
+            
+            languages.splice(1, 0, 'Dart')
+            console.log(languages)
+
+
+            var languages = [
+                'Javascript',
+                'PHP',
+                'Ruby',
+            ];
+
+            var languages2 = [
+                'Dart',
+                'Java',
+            ];
+            console.log(languages.concat(languages2))
+
+
+            var languages = [
+                'Javascript',
+                'PHP',
+                'Ruby',
+            ];
+            console.log(languages.slice(1))
