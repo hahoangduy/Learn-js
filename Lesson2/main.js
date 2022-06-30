@@ -61,3 +61,65 @@
         const myString2 = 'Hoang Duy';
 
         console.log(myString2.charAt(6))
+
+        //=================================================================================//
+
+    /*
+    Kiểu số (Number) trong Javascript
+
+    1. Tạo giá trị Number
+        - Các cách tạo
+        - Dùng cách nào? Tại sao?
+        - Kiểm tra data type
+    2. Làm việc với Numbet
+        - To String
+        - To Fixed
+    */
+        var age = 16;                       // Cách 1
+        var PI = 3.14;
+
+        var otherNumber = new Number(9);    // Cách 2
+
+        console.log(typeof otherNumber);
+
+        var result = 20 / 5;
+        console.log(result )
+
+    /*
+    Mảng trong Javascript - Array
+
+    1. Tạo mảng
+        - Các tạo mảng
+        - Sử dụng cách nào? Tại sao?
+        - Kiểm tra data type?
+    2. Truy xuất mảng
+        - Độ dài mảng
+        - Lấy phần tử theo index
+    */
+
+        // function isNumber(value) {
+        //     var a = typeof value
+        //     if(a == 'number') {
+        //         return true
+        //     }
+        //         return false
+        // }
+        
+        
+        
+        
+        // // Expected results:
+        // console.log(isNumber(999)); // true
+        // console.log(isNumber('abc')); // false
+        // console.log(isNumber('100')); // false
+
+        var a = 10;
+        var b = 5;
+        var c
+
+        c = a
+        a = b
+        b = c
+       
+        console.log(a);
+        console.log(b);

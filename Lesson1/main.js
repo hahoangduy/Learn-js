@@ -116,6 +116,8 @@
             console.log('Dieu kien sai')
         }
 
+        if('Duy' == 'Duc')
+
         // Số chẵn là số khi chia cho 2 sẽ có phần dư là 0
 // Số lẻ là số khi chia cho 2 sẽ có phần dư là 1
 
