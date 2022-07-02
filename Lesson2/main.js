@@ -230,3 +230,73 @@
                 'Ruby',
             ];
             console.log(languages.slice(1))
+
+
+            // Object trong Javascript 
+
+            var myInfo = {
+                name: 'Hoang Duy',
+                age: '16',
+                Address: 'Dak Mil',
+                getName: function() {
+                    return this.name;
+                }
+            };
+
+            console.log(myInfo.getName());
+            // myInfo.email = 'hoangduy@gmail.com' // cách thêm 1 key vào biến
+            // console.log(myInfo)
+
+            // delete myInfo.name; // xóa key trong biến
+            // delete myInfo.age;
+
+
+            // Object constructor
+
+            function User(firstName, lastName, avatar) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.avatar = avatar;
+
+                this.getName = function() {
+                    return `${this.firstName} ${this.lastName}`
+                }
+            };
+
+            var author = new User('Hoang', 'Duc', 'Avatar');
+            var user = new User('Hoang', 'Duy', 'Avatar');
+
+            author.title = 'Huong dan hoc JS';
+            author.title = 'Huong dan hoc JS';
+            user.comment = 'Dang hoc JS';
+
+            console.log(author);
+            console.log(user);
+
+
+            /*
+            Object prototype - Basic
+
+            1. Prototype là gì ?
+            2. Sử dụng khi nào ?
+            */
+           
+            function User(firstName, lastName, avatar) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.avatar = avatar;
+
+                this.getName = function() {
+                    return `${this.firstName} ${this.lastName}`
+                }
+            };
+
+            var author = new User('Hoang', 'Duc', 'Avatar');
+            var user = new User('Hoang', 'Duy', 'Avatar');
+
+            author.title = 'Huong dan hoc JS';
+            author.title = 'Huong dan hoc JS';
+            user.comment = 'Dang hoc JS';
+
+            console.log(author);
+            console.log(user);
