@@ -377,8 +377,50 @@
                 'Cat'
             ];
 
+            animals[2]
 
             var result = getLastElement(animals);
             
             console.log(result); // Expected: "Elephant"
             console.log(animals); // Expected: ['Monkey', 'Tiger', 'Elephant']
+
+
+// Cho 1 function tên là getElement(), với tham số  là 1 mảng và 1 number, 
+// lấy giá trị của mảng tại vị trí number đã cho, 
+// nếu không tồn tại kết quả trả về kết quả `không tồn tại giá trị ở vị trí: {number}`.
+
+
+// arr1 = [1, 6, 3, 5, 23]
+// getElement(arr1, 3) => tìm kết quả 5
+
+// getElement(arr1, 7) => tìm kết quả: không tồn tại giá trị ở vị trí : 7
+function getElement(array, so) { // arr1, số = 3
+    // Tạo if, else để xác định so có vượt quá độ dài của mảng không
+        if(array.length > so) {
+            return array[so]
+        } else {
+            return 'Không tồn tại giá trị ở vị trí: '
+        }
+        
+    // Nếu tồn tại giá trị thì hiện value
+    // Nếu không tồn tại thì trả về kết quả `không tồn tại giá trị ở vị trí: {number}`
+}
+
+arr1 = [1, 6, 3, 5, 23]
+var result1 = getElement(arr1, 3)
+console.log(result1)
+var result2 = getElement(arr1, 7)
+console.log(result2)
+
+
+// bước 1: arr1 tạo mảng 
+// bước 2: gọi hàm getElement với tham số arr1, 3
+// bước 3: logic bên trong hàm getElement 
+// bước 3.1: kiểm tra điều kiện giữa độ dài của mảng(5) và số đã cho(3): if(5 > 3)(true)
+// bước 3.2: true => trả về giá trị(5) tại index = 3
+// bước 4: show giá trị của result1 = 5
+// bước 5: gọi hàm getElement với tham số arr1, 7
+// bước 6: logic bên trong hàm getElement
+// bước 6.1: kiểm tra điều kiện giữa độ dài của mảng(5) và số đã cho(7): if(5 > 7)(false)
+// bước 6.2: false => tiếp tục tới lệch else, trả về giá trị 'Không ...'
+// bước 7: show giá trị của result2 = 'Không ...'
