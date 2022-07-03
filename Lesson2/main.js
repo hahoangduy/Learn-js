@@ -101,11 +101,12 @@
             'PHP',
             'Ruby',
         ];
-
-        console.log(languages);
+        languages.join
+        console.log('===========================================================')
+        console.log(languages[1]);
         // console.log(Array.isArray(languages));
         // console.log(languages.length)
-        // console.log(languages[0])
+        // console.log(languages[0]) // Lấy value của index được chọn
 
         // function isNumber(value) {
         //     var a = typeof value
@@ -280,7 +281,7 @@
             1. Prototype là gì ?
             2. Sử dụng khi nào ?
             */
-           
+
             function User(firstName, lastName, avatar) {
                 this.firstName = firstName;
                 this.lastName = lastName;
@@ -300,3 +301,49 @@
 
             console.log(author);
             console.log(user);
+
+            // function có 2 tham số (array và string) return kiểu dữ liệu string 
+            // Dùng để nối 1 mảng + 1 kí tự thành 1 chuỗi
+            // Hàm array.join() trong Javascript trả về 1 chuỗi có kiểu dữ liệu là string và nối 1 array + 1 kí tự thành 1 chuỗi
+            function joinWithCharacter(array, charactor ) {
+                var a = array.join(charactor) 
+                // console.log(typeof a)
+                // return a
+                var b = join(array, charactor)
+                console.log(a)
+                console.log(b)
+                return ''
+             } 
+             
+             // Ví dụ khi sử dụng
+             var cars = ['Honda', 'Mazda', 'Mercedes'];
+             
+             var result =  join(cars, ' - ');
+             
+             console.log(result); // Expected: "Honda - Mazda - Mercedes"
+
+             function join(array, ch) {
+                var text = ''
+                for (let i = 0; i < array.length; i++) { 
+                    // I 0 => Honda + ' - ' => Honda - 
+                    var a = array.length - 1 
+                    if(a == i) {
+                        text = text + array[i] 
+
+                    } else {
+                        text = text + ( array[i] + ch )
+                    }
+
+                // text = 1000 + (array[1] + ' - ') => 1000 Mazda -
+                //text = 1000 Mazda - + (array[2] + ' - ') => 1000 Mazda - Mercedes -
+                 
+               
+
+                // i = 1, 1 <= 3 (true), i++
+                // i = 2, 2 <= 3 (true), i++
+                // i = 3, 3 <= 3 (true) => bug , i++
+               
+                }
+
+                return text
+             }
