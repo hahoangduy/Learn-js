@@ -155,7 +155,7 @@
                 'PHP',
                 'Ruby',
             ];
-            console.log(languages.toString())
+            console.log(languages.toString()) // Chuyển kiểu dữ liệu của array trên thành string
             
 
             var languages = [
@@ -163,7 +163,7 @@
                 'PHP',
                 'Ruby',
             ];
-            console.log(languages.join(' - '))
+            console.log(languages.join(' - ')) // Dùng để nối 1 mảng + 1 kí tự thành 1 chuỗi
 
 
             var languages = [
@@ -171,7 +171,7 @@
                 'PHP',
                 'Ruby',
             ];
-            console.log(languages.pop()) // Xóa elenment cuối mảng và trả về phần tử đã xóa 
+            console.log(languages.pop()) // Xóa element cuối mảng và trả về phần tử đã xóa 
             console.log(languages)
 
 
@@ -180,7 +180,7 @@
                 'PHP',
                 'Ruby',
             ];
-            console.log(languages.push('Dart', 'Java')) // Thêm element vào cuối mảng
+            console.log(languages.push('Dart', 'Java')) // Thêm 1 hoặc nhiều element vào cuối mảng và trả về độ dài mới của mảng
             console.log(languages)
 
 
@@ -189,7 +189,7 @@
                 'PHP',
                 'Ruby',
             ];
-            console.log(languages.shift()) // Xóa element đầu của mảng
+            console.log(languages.shift()) // Xóa element đầu của mảng và trả về phần tử đã xóa
             console.log(languages)
 
 
@@ -198,7 +198,7 @@
                 'PHP',
                 'Ruby',
             ];
-            console.log(languages.unshift('Dart')) // Thêm element vào đầu mảng
+            console.log(languages.unshift('Dart')) // Thêm 1 hoặc nhiều element vào đầu mảng và trả về độ dài mới của mảng
             console.log(languages)
 
 
@@ -209,7 +209,7 @@
             ];
             
             languages.splice(1, 0, 'Dart')
-            console.log(languages)
+            console.log(languages) // Dùng để xóa và chèn phần tử mới vào mảng
 
 
             var languages = [
@@ -222,7 +222,7 @@
                 'Dart',
                 'Java',
             ];
-            console.log(languages.concat(languages2))
+            console.log(languages.concat(languages2)) // Dùng để nối Array
 
 
             var languages = [
@@ -230,7 +230,7 @@
                 'PHP',
                 'Ruby',
             ];
-            console.log(languages.slice(1))
+            console.log(languages.slice(1)) // Dùng để cắt toàn bộ hoặc 1 vài element của mảng
 
 
             // Object trong Javascript 
@@ -326,7 +326,7 @@
                 var text = ''
                 for (let i = 0; i < array.length; i++) { 
                     // I 0 => Honda + ' - ' => Honda - 
-                    var a = array.length - 1 
+                    var a = array.length - 1 // Tìm index cuối của mảng
                     if(a == i) {
                         text = text + array[i] 
 
@@ -347,3 +347,38 @@
 
                 return text
              }
+
+
+
+             function getLastElement(animals) {
+               
+                    var lastIndex = animals.length - 1  // Tìm index cuối của mảng
+                var result = animals[lastIndex] // Tạo biến dùng để hứng element với index = biến lastIndex
+        //    console.log(result)
+            return result // Trả về result
+            }
+
+            function getLastElement1(animals) {
+                var lastIndex = animals.length - 1 // Tìm index cuối của mảng
+                return animals[lastIndex] // Trả về kết quả là element với index = biến lastIndex
+            }
+
+            function getLastElement2(animals) {
+                return animals[animals.length - 1] // Trả về kết quả là element của index cuối của mảng
+            }
+            
+            // Ví dụ sử dụng
+            var animals = [
+                'Monkey',
+                'Tiger',
+                'Elephant',
+                'Dog',
+                'Fish',
+                'Cat'
+            ];
+
+
+            var result = getLastElement(animals);
+            
+            console.log(result); // Expected: "Elephant"
+            console.log(animals); // Expected: ['Monkey', 'Tiger', 'Elephant']
