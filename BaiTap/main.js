@@ -250,7 +250,7 @@ function runLogic(array, charactor) {
    var noiChuoi = ''
    // Dùng for để duyệt tất cả phần tử trong mảng
    for(let i = 0; i < array.length; i++) {
-        noiChuoi = array[i] + noiChuoi
+        noiChuoi = noiChuoi + array[i]
         if (i % 2 == 0) {
             noiChuoi = noiChuoi + charactor
         }
@@ -263,3 +263,64 @@ function runLogic(array, charactor) {
 arr1 = ["1", "5", "123", "daa", "97"]
 var result8 = runLogic(arr1, ' ?? ')
 console.log(result8)
+
+//========================================================================================
+
+// cho 1 function findIndex(), với 2 tham số, array và number,
+// tìm và trả về index trong array nếu index là số lẻ 
+// và value của index bằng number đã cho nếu không thì trả về -1.
+
+// arr1 = [5, 2, 4, 123, 11, 3 ,7, 34]
+// findIndex(arr1, 4) => -1 vì array[i] = 4 => index = 2 => không thỏa điều kiện 
+// findIndex(arr1, 8) => -1 vì value của index không bằng number đã cho 
+// findIndex(arr1, 3) => 5 vì array[i] = 3 => index = 5 => thỏa điều kiện
+
+    function findIndex(array, so3) {
+        // Dùng for để duyệt từng index trong mảng
+        for (let i = 0; i < array.length; i++) {
+            // Dùng if để tìm index số lẻ và so sánh với number đã cho
+            if (i % 2 != 0 && array[i] == so3) { // 5, 6 , 7
+                return i
+            }
+        }
+
+        return -1
+    }
+
+    arr1 = [5, 2, 4, 123, 11, 3 ,7, 34]
+    var result9 = findIndex(arr1, 4)
+    console.log(result9)
+    var result10 = findIndex(arr1, 8)
+    console.log(result10)
+    var result11 = findIndex(arr1, 3)
+    console.log(result11)
+
+    console.log('========================================================================')
+
+// cho 1 function findIndex(), với 2 tham số, array và number,
+// tìm index và trả về, nếu index là số  lẻ và number đã cho chia hết cho value của index.
+// nếu k trả về -1.
+
+// arr1 = [5, 2, 4, 2, 11, 3, 7, 34]
+// findIndex(arr1, 9) =>
+// findIndex(arr1, 8 )
+// findIndex(arr1, 17)
+
+function findIndex1(array, so4) {
+    // Tạo for để duyệt từng index trong mảng
+    for(i = 0; i < array.length; i++) {
+        // Tạo if để xác định index là số lẻ và number đã cho chia hết cho value của index
+        if(i % 2 != 0 && so4 % array[i] == 0) {
+            return i
+        }
+    }
+    return -1
+}
+
+arr1 = [5, 2, 4, 2, 11, 3, 7, 34]
+var result12 = findIndex1(arr1, 9)
+console.log(result12)
+var result13 = findIndex1(arr1, 8 )
+console.log(result13)
+var result14 = findIndex1(arr1, 17)
+console.log(result14)
