@@ -394,23 +394,23 @@
 // getElement(arr1, 3) => tìm kết quả 5
 
 // getElement(arr1, 7) => tìm kết quả: không tồn tại giá trị ở vị trí : 7
-function getElement(array, so) { // arr1, số = 3
-    // Tạo if, else để xác định so có vượt quá độ dài của mảng không
-        if(array.length > so) {
-            return array[so]
-        } else {
-            return 'Không tồn tại giá trị ở vị trí: '
-        }
+// function getElement(array, so) { // arr1, số = 3
+//     // Tạo if, else để xác định so có vượt quá độ dài của mảng không
+//         if(array.length > so) {
+//             return array[so]
+//         } else {
+//             return 'Không tồn tại giá trị ở vị trí: '
+//         }
         
-    // Nếu tồn tại giá trị thì hiện value
-    // Nếu không tồn tại thì trả về kết quả `không tồn tại giá trị ở vị trí: {number}`
-}
+//     // Nếu tồn tại giá trị thì hiện value
+//     // Nếu không tồn tại thì trả về kết quả `không tồn tại giá trị ở vị trí: {number}`
+// }
 
-arr1 = [1, 6, 3, 5, 23]
-var result1 = getElement(arr1, 3)
-console.log(result1)
-var result2 = getElement(arr1, 7)
-console.log(result2)
+// arr1 = [1, 6, 3, 5, 23]
+// var result1 = getElement(arr1, 3)
+// console.log(result1)
+// var result2 = getElement(arr1, 7)
+// console.log(result2)
 
 
 // bước 1: arr1 tạo mảng 
@@ -424,3 +424,33 @@ console.log(result2)
 // bước 6.1: kiểm tra điều kiện giữa độ dài của mảng(5) và số đã cho(7): if(5 > 7)(false)
 // bước 6.2: false => tiếp tục tới lệch else, trả về giá trị 'Không ...'
 // bước 7: show giá trị của result2 = 'Không ...'
+
+
+
+// cho 1 function getElement(), với 3 tham số  array, number1, number2. 
+// lấy giá trị của array tại vị trí number1, so sánh giá trị vừa tìm được với number2,
+// nếu chúng bằng nhau trả về  true, nếu không trả về false.
+
+
+// arr1 = [3,1,63,65,7, 213, 4, 123]
+// getElement(arr1, 2, 2)
+// getElement(arr1, 6, 4)
+// getElement(arr1, 4, 4)
+
+
+    function getElement(array, so1, so2) {
+        var timGiatri = array[so1]
+        if(timGiatri == so2) {
+            return true
+        } else {
+            return false
+        }
+    };
+
+    arr1 = [3,1,63,65,7, 213, 4, 123]
+    var result1 = getElement(arr1, 2, 2)
+    console.log(result1)
+    var result2 = getElement(arr1, 6, 4)
+    console.log(result2)
+    var result3 = getElement(arr1, 4, 4)
+    console.log(result3)
