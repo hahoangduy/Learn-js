@@ -35,9 +35,10 @@
                  
                
 
-                // i = 1, 1 <= 3 (true), i++
-                // i = 2, 2 <= 3 (true), i++
-                // i = 3, 3 <= 3 (true) => bug , i++
+                // i = 0, 0 < 3, i++ = a = 2, if(2 == 0) => false -> else = text = '' + (Honda + ' - ') => text = Honda - 
+                // i = 1, 1 < 3, i++ = a = 2, if(2 == 1) => false -> else = text = Honda - + (Mazda + ' - ') => text = Honda - Mazda -
+                // i = 2, 2 < 3, i++ = a = 2, if(2 == 2) => true = text = Honda - Mazda - + (Mercedes + ' - ') => text = Honda - Mazda - Mercedes
+                // i = 3, 3 < 3(false) => dừng vòng lặp
                
                 }
 
@@ -79,6 +80,9 @@
             
             console.log(result); // Expected: "Elephant"
             console.log(animals); // Expected: ['Monkey', 'Tiger', 'Elephant']
+
+
+// =========================================================================================== 
 
 
 // Cho 1 function tên là getElement(), với tham số  là 1 mảng và 1 number, 
@@ -123,6 +127,8 @@
 // bước 7: show giá trị của result2 = 'Không ...'
 
 
+// =================================================================================================
+
 
 // cho 1 function getElement(), với 3 tham số  array, number1, number2. 
 // lấy giá trị của array tại vị trí number1, so sánh giá trị vừa tìm được với number2,
@@ -159,6 +165,81 @@
     Bước 2: Biến tạm timGiatri để hứng element ứng với index của nó
     Bước 2: Biến result1 gọi hàm getElement với 3 tham số là arr1, 2, 2
     Bước 3: Logic trong hàm
-    Bước 4: So sánh giá trị vừa tìm được(63) với so2(2): if(63 = 2)(false)
-    Bước 5: 
+    Bước 3.1: So sánh giá trị vừa tìm được(63) với so2(2): if(63 = 2)(false)
+    Bước 3.2: false => tiếp tục chạy với else và trả về giá trị 'false'
+    Bước 4: Biến result2 gọi hàm getElement với 3 tham số là arr1, 6, 4
+    Bước 5: Logic trong hàm
+    Bước 5.1: So sánh giá trị vừa tìm được(4) với so2(4): if(4 = 4)(true)
+    Bước 5.2: true => Trả về giá trị 'true'
+    Bước 6: Biến result3 gọi hàm getElement với 3 tham số là arr1, 4, 4
+    Bước 7: Logic trong hàm 
+    Bước 7.1: So sánh giá trị vừa tìm được(7) với so2(4): if(7 = 4)(false)
+    Bước 7.2: false => tiếp tục chạy tới else và trả về giá trị 'false'
     */
+
+    // ========================================================================================
+
+// cho 1 function total(), với 1 tham số  là array
+// tính tổng toàn bộ phần tử trong array đó với điều kiện index là số chẵn và trả về kết quả
+//
+
+// arr1 = [ 3, 1, 11, 32, 31]
+// total(arr1)
+
+// arr2 = [2,11,3476, 123, 46, 98, 34, 223]
+// total(arr2)
+
+// hàm total tính tổng tất cả phần tử trong mảng
+function total(array) {
+    // Tạo biến sum để tính tổng
+    var sum = 0
+    // Tạo 1 vòng lặp duyệt qua từng phần tử của mảng
+    // i là index bắt đầu từ 0, i phải bé hơn độ dài của mảng, index chỉ tăng 1 giá trị cho 1 lần duyệt
+    for (let i = 0; i < array.length; i++) {
+        // Lấy element của index rồi cộng với sum
+        
+        // Tìm index số chẵn
+        if (i % 2 == 0) {
+             sum = array[i] + sum
+        }
+    }
+    return sum
+}
+
+arr1 = [ 3, 1, 11, 32, 31]
+var result4 = total(arr1)
+console.log(result4)
+arr2 = [2,11,3476, 123, 46, 98, 34, 223]
+var result5 = total(arr2)
+console.log(result5)
+
+
+function totalSole(array) {
+    // Tạo biến sum để tính tổng
+    var sum = 0
+    // Tạo 1 vòng lặp duyệt qua từng phần tử của mảng
+    // i là index bắt đầu từ 0, i phải bé hơn độ dài của mảng, index chỉ tăng 1 giá trị cho 1 lần duyệt
+    for (let i = 0; i < array.length; i++) {
+        // Lấy element của index rồi cộng với sum
+        // sum = array[i] + sum
+        // Tìm index số chẵn
+        if (i % 2 != 0) {
+             sum = array[i] + sum
+        }
+    }
+    return sum
+}
+
+var result6 = totalSole(arr1)
+console.log(result6)
+var result7 = totalSole(arr2)
+console.log(result7)
+
+// =======================================================================================
+
+// cho 1 function runLogic(), với 2 tham số, array và charactor, 
+// cộng chuỗi array với charactor ở vị trí chẵn và trả về kết quả
+
+
+// arr1 = ["1", "5", "123", "daa", "97"]
+// runLogic(arr1, " ?? ")
