@@ -11,7 +11,7 @@
                 return ''
              } 
              
-             // Ví dụ khi sử dụng
+            //  Ví dụ khi sử dụng
              var cars = ['Honda', 'Mazda', 'Mercedes'];
              
              var result =  join(cars, ' - ');
@@ -31,7 +31,7 @@
                     }
 
                 // text = 1000 + (array[1] + ' - ') => 1000 Mazda -
-                //text = 1000 Mazda - + (array[2] + ' - ') => 1000 Mazda - Mercedes -
+                // text = 1000 Mazda - + (array[2] + ' - ') => 1000 Mazda - Mercedes -
                  
                
 
@@ -222,10 +222,10 @@ function totalSole(array) {
     for (let i = 0; i < array.length; i++) {
         // Lấy element của index rồi cộng với sum
         // sum = array[i] + sum
-        // Tìm index số chẵn
-        if (i % 2 != 0) {
+        // Tìm index số lẻ
+        // if (i % 2 != 0) {
              sum = array[i] + sum
-        }
+        // }
     }
     return sum
 }
@@ -238,8 +238,28 @@ console.log(result7)
 // =======================================================================================
 
 // cho 1 function runLogic(), với 2 tham số, array và charactor, 
-// cộng chuỗi array với charactor ở vị trí chẵn và trả về kết quả
+// nối chuỗi array với nhau và nối với charactor ở vị trí chẵn và trả về kết quả
 
 
 // arr1 = ["1", "5", "123", "daa", "97"]
 // runLogic(arr1, " ?? ")
+
+
+function runLogic(array, charactor) {
+   // Tạo biến để hứng để nối chuỗi
+   var noiChuoi = ''
+   // Dùng for để duyệt tất cả phần tử trong mảng
+   for(let i = 0; i < array.length; i++) {
+        noiChuoi = array[i] + noiChuoi
+        if (i % 2 == 0) {
+            noiChuoi = noiChuoi + charactor
+        }
+   } 
+   // Nối các phần tử 
+   // Tìm index số chẵn để nối với charactor
+   return noiChuoi
+};
+
+arr1 = ["1", "5", "123", "daa", "97"]
+var result8 = runLogic(arr1, ' ?? ')
+console.log(result8)
