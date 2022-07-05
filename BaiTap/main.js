@@ -492,3 +492,128 @@ if (thu == 'thu2') {
 } else if (thu == 'thu5') {
     console.log(4)
 } 
+
+console.log('---------------------------------------------------------------')
+
+
+// cho 1 function find(), với 2 tham số, a và b 
+// nếu a và b đều là số chẵn thì trả về a + b,
+// nếu a và b đều là số lẻ thì trả về a - b,
+// nếu a là chẵn và b là lẻ thì trả về a,
+// nếu b là chẵn và a là lẻ thì trả về b
+
+
+// find(7,8)
+// find(13217648237, 1)
+// find(887, 51243)
+
+function find(a, b) {
+    // Tạo if và else if để kiểm tra a và b là số chẵn hay số lẻ
+    // Tìm a là số chẵn
+    // Nếu a là số chẵn thì tiếp tục tìm b là số chẵn hay lẻ
+    // Nếu a là số lẻ 
+    if(a % 2 == 0) { // a là số chẵn 
+        if(b % 2 == 0) { // b là số chẵn và a là số chẵn
+           return a + b
+        } else { // khi a là số chẵn và b là số lẻ
+            return a
+        }
+    } else { // a là số lẻ
+        if(b % 2 == 0) { // b là số chẵn và a là số lẻ
+           return b
+        } else { // khi a là số lẻ và b là số lẻ
+           return a - b
+        }
+    } 
+}
+var result21 = find(6,8)
+console.log(result21)
+var result22 = find(13217648237, 1)
+console.log(result22)
+var result23 = find(887, 51243)
+console.log(result23)
+
+
+
+console.log('++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+
+// cho 1 function find() với 2 tham số  string là str1 và str2,
+// gọi a là độ dài của str1 và b là độ dài của str2
+// nếu a và b đều là số chẵn thì trả về a + b,
+// nếu a và b đều là số lẻ thì trả về a - b,
+// nếu a là chẵn và b là lẻ thì trả về a,
+// nếu b là chẵn và a là lẻ thì trả về b
+
+// find('hsdujsd', 'nnn23')
+// find(' vcx', 'n3')
+// find('3', 'adsad2341')
+
+
+function find1(str1, str2) {
+    // Tạo 2 biến hứng để chứa độ dài của 2 string
+    var a = str1.length
+    var b = str2.length
+    // Tạo if và else if để kiểm tra a và b là số chẵn hay lẻ
+    if(a % 2 == 0 && b % 2 == 0) {
+        return a + b
+    } else if(a % 2 != 0 && b % 2 != 0) {
+        return a - b
+    } else if(a % 2 == 0 && b % 2 != 0) {
+        return a
+    } else if(a % 2 != 0 && b % 2 == 0) {
+        return b
+    }
+}
+
+var result24 = find1('hsdujsd', 'nnn23')
+console.log(result24)
+var result25 = find1(' vcx', 'n3')
+console.log(result25)
+var result26 = find1('3', 'adsad2341')
+console.log(result26)
+
+
+/*
+cho 1 function find2() có 3 tham số a, b, c đều là number
+kiểm tra a, b là số chẵn ; c là số lẻ thì trả về a + b
+kiểm tra a, c chẵn; b là số lẻ thì trả về a + c
+*/
+
+    // function find2(a, b, c) {
+    //     // Tạo if để kiểm tra a, b, c là số chẵn hay lẻ
+    //     if(a % 2 == 0) { // a là số chẵn
+    //         if(b % 2 == 0) { // b là số chẵn và a là số chẵn
+    //             if(c % 2 != 0) { // c là số lẻ và a và b là số chẵn
+    //                 return a + b
+    //             }
+    //         }
+    //     } 
+    //     if(a % 2 == 0) { // a là số chẵn
+    //         if(c % 2 == 0) { // c là số chẵn và a là số chẵn
+    //             if(b % 2 != 0) { // b là số lẻ và a,c là số chẵn
+    //                 return a + c
+    //             }   
+    //         }
+    //     }
+    //     } 
+
+    function find3(a, b, c) {
+        // Tạo if để kiểm tra a, b, c là số chẵn hay lẻ
+        if(a % 2 == 0) { // a là số chẵn
+            if(b % 2 == 0) { // b là só chẵn và a là số chẵn
+                if(c % 2 != 0) { // c là số lẻ và a, b là số chẵn
+                    return a + b
+                }
+            } else { // b là số lẻ 
+                if(c % 2 == 0) { // c là số chẵn và b là số lẻ
+                    return a + c
+                }
+            }
+        }
+    }
+var result27 = find3(6, 8, 1) // 14
+console.log(result27)
+var result28 = find3(13217648237, 1, 1231) // undefined
+console.log(result28)
+var result29 = find3(887, 51243, 123) // undefined
+console.log(result29)
