@@ -246,7 +246,7 @@ console.log(result7)
 
 
 function runLogic(array, charactor) {
-   // Tạo biến để hứng để nối chuỗi
+   // Tạo biến hứng để nối chuỗi
    var noiChuoi = ''
    // Dùng for để duyệt tất cả phần tử trong mảng
    for(let i = 0; i < array.length; i++) {
@@ -260,7 +260,7 @@ function runLogic(array, charactor) {
    return noiChuoi
 };
 
-arr1 = ["1", "5", "123", "daa", "97"]
+arr1 = ["1", "5", "123", "daa", "97"] // 1 ?? 
 var result8 = runLogic(arr1, ' ?? ')
 console.log(result8)
 
@@ -324,3 +324,171 @@ var result13 = findIndex1(arr1, 8 )
 console.log(result13)
 var result14 = findIndex1(arr1, 17)
 console.log(result14)
+
+console.log('=========================================================================')
+
+// cho 1 function getEvenNumber(), với tham số  là array,
+// tìm tất cả các số chẵn trong array và trả về 
+
+// arr1 = [6, 11, 4, 12, 33, 63, 12, 8, 1]
+
+    function getEvenNumber(array) {
+        // Tạo mảng hứng chứa element số chẵn
+        var array2 = [] 
+        // Tạo vòng for để duyệt tất cả index trong mảng
+        for(let i = 0; i < array.length; i++) {
+            // Tạo if để tìm element số chẵn và trả về kết quả
+            if(array[i] % 2 ==0) {
+                // Thêm element số chẵn vào mảng hứng
+                array2.push(array[i])
+            } 
+        }
+        return array2
+    }
+
+    arr1 = [6, 11, 4, 12, 33, 63, 12, 8, 1] // 6, 4, 12, 12, 8
+    var result15 = getEvenNumber(arr1)
+    console.log(result15) 
+
+console.log('-------------------------------------------------------------------------')
+
+
+// cho 1 function getEvenNumber1(), với tham số  là array,
+// tìm số chẵn trong array, nếu là số chẵn thay nó thành số -1 không tạo mảng hứng và trả về 
+
+// arr1 = [6, 11, 4, 12, 33, 63, 12, 8, 1] // -1, 11, -1, -1, 33, 63, -1, -1, 1
+
+    function getEvenNumber1(array) {
+        // Tạo for để duyệt tất cả index của mảng
+        for(let i = 0; i < array.length; i++) {
+        // Tạo if để tìm số chẵn
+        if(array[i] % 2 == 0) {
+            // Thay số -1 vào số chẵn trong mảng
+            array.splice(i, 1, -1)
+        }
+        }
+    return array
+    }
+
+
+    arr1 = [6, 11, 4, 12, 33, 63, 12, 8, 1] 
+    // arr1.splice(4, 1, -1)
+    var result16 = getEvenNumber1(arr1)
+    console.log(result16)
+    // console.log(arr1)
+
+
+    /* 
+    cho 1 function a() có tham số là b, kiểm tra kiểu dữ liệu của b
+    nếu là number, và số đó là số chẵn thì +1, không phải số chẵn thì +2 và trả về,
+    nếu là string và = hello thì nối chuỗi ' Duy '
+    kiemTradulieu(8)
+    kiemTradulieu('hello')
+    */
+
+    function kiemTradulieu(b) {
+        // Dùng typeof để kiểm tra dữ liệu
+        var a = typeof b
+        if (a == 'number') {
+            if (b % 2 == 0) {
+                b++
+            } else {
+                b = b + 2
+            }
+            return b
+        } else if (a == 'string') {
+            if (b == 'hello') {
+                b = b + ' Duy '
+            }
+            return b
+        }
+        }
+        // var result17 = kiemTradulieu(9)
+        // console.log(result17)
+        var result18 = kiemTradulieu('hello1')
+        console.log(result18)
+       
+        /*
+        cho 1 function kiemTrangaythang(thu, thang) có 2 tham số string, number 
+        kiểm tra thu và thang đã cho sau đó trả về kết quả là string
+        kiemTrangaythang('t2', 6) => return 'Thứ 2, tháng 6'
+        kiemTrangaythang('t5', 1) => return 'Thứ 5, tháng 1'
+        */ 
+
+        function kiemTrangaythang(thu, thang) {
+            var timThuNgay = ''
+            if(thu == 't2') {
+                timThuNgay = 'Thứ 2'
+            } else if(thu == 't3') {
+                timThuNgay = 'Thứ 3'
+            } else if(thu == 't4') {
+                timThuNgay = 'Thứ 4'
+            } else if(thu == 't5') {
+                timThuNgay = 'Thứ 5'
+            } else if(thu == 't6') {
+                timThuNgay = 'Thứ 6'
+            }
+
+            if(thang == 1) {
+                timThuNgay = timThuNgay + ', tháng 1'
+            } else if(thang == 2) {
+                timThuNgay = timThuNgay + ', tháng 2'
+            } else if(thang == 3) {
+                timThuNgay = timThuNgay + ', tháng 3'
+            } else if(thang == 4) {
+                timThuNgay = timThuNgay + ', tháng 4'
+            } else if(thang == 5) {
+                timThuNgay = timThuNgay + ', tháng 5'
+            } else if(thang == 6) {
+                timThuNgay = timThuNgay + ', tháng 6'
+            } else if(thang == 7) {
+                timThuNgay = timThuNgay + ', tháng 7'
+            } else if(thang == 8) {
+                timThuNgay = timThuNgay + ', tháng 8'
+            } else if(thang == 9) {
+                timThuNgay = timThuNgay + ', tháng 9'
+            } else if(thang == 10) {
+                timThuNgay = timThuNgay + ', tháng 10'
+            } else if(thang == 11) {
+                timThuNgay = timThuNgay + ', tháng 11'
+            } else if(thang == 12) {
+                timThuNgay = timThuNgay + ', tháng 12'
+            }
+            return timThuNgay
+        }
+
+        var result19 = kiemTrangaythang('t2', 6)
+        console.log(result19)
+        var result20 = kiemTrangaythang('t5', 1)
+        console.log(result20)
+
+    /*
+    cho 1 function a() có tham số là b, kiểm tra kiểu dữ liệu của b
+    nếu là array number thì thêm vào đầu mảng số 100 và cuối mảng là 1000
+    nếu là array string thì thêm vào đầu mảng chữ 'hoang' và cuối mảng là 'duy'
+    */
+
+
+    var a = 10
+var b = 10
+let greeting;
+if (a < b) {
+  greeting = "Good morning";
+} else if (a == b) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}
+console.log(greeting)
+
+
+var thu = 'thu2'
+if (thu == 'thu2') {
+    console.log(1)
+} else if (thu == 'thu3') {
+    console.log(2)
+} else if (thu == 'thu4') {
+    console.log(3)
+} else if (thu == 'thu5') {
+    console.log(4)
+} 

@@ -201,14 +201,14 @@
             console.log(languages.unshift('Dart')) // Thêm 1 hoặc nhiều element vào đầu mảng và trả về độ dài mới của mảng
             console.log(languages)
 
-
+            console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
             var languages = [
                 'Javascript',
                 'PHP',
                 'Ruby',
             ];
             
-            languages.splice(1, 0, 'Dart')
+            languages.splice(0, 1, 'Dart')
             console.log(languages) // Dùng để xóa và chèn phần tử mới vào mảng
 
 
