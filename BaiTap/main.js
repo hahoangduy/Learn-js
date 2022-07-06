@@ -654,7 +654,7 @@ console.log('**************************************************************')
 
 
 function update2(array, index) {
-    if(array.length > index && index == 0) {
+    if(array.length > index && index >= 0) {
         array.splice(index, 1, -1)
     }
         return array
@@ -680,27 +680,27 @@ console.log('-----------------------------------------------------------------')
 // và trả về array đó.
 // arr1 = [1, 5, 1, 3, 13, 87]
 // update(arr1)
-// arr2 =  [1, 5, 1, 6 ,3, 13, 87]
+// arr2 =  [1, 5, 1, 6 , 3, 13, 87]
 // update(arr2)
 
 function update1(array) {
     // Tạo biến để hứng độ dài của array
     var doDai = array.length
         // Tạo if để kiểm tra độ dài của mảng là số chẵn hay lẻ
-            if(doDai % 2 != 0) {
-                var tinhDodai = doDai % 2 + 2 // Biến tạm để hứng để kết quả tính index chính giữa
-                // Thay -1 vào value của index chính giữa của mảng 
-                array.splice(tinhDodai , 1, -1) 
-            } else if(doDai % 2 == 0) {
-                // Thêm -1 vào đầu mảng
-                array.unshift(-1)
-            }
-            return array
-        }
+    if(doDai % 2 != 0) {
+        var tinhDodai = (doDai - 1) / 2 // Biến tạm để hứng để kết quả tính index chính giữa
+        // Thay -1 vào value của index chính giữa của mảng 
+        array.splice(tinhDodai , 1, -1)
+    } else {
+        // Thêm -1 vào đầu mảng
+        array.unshift(-1)
+    }
+    return array
+}
 
 arr1 = [1, 5, 1, 3, 13, 87]
 var result35 = update1(arr1)
 console.log(result35)
 arr2 =  [1, 5, 1, 6, 3, 13, 87]
 var result36 = update1(arr2)
-console.log(result36)
+console.log(result36) 
