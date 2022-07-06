@@ -554,13 +554,13 @@ function find1(str1, str2) {
     var a = str1.length
     var b = str2.length
     // Tạo if và else if để kiểm tra a và b là số chẵn hay lẻ
-    if(a % 2 == 0 && b % 2 == 0) {
+    if(a % 2 == 0 && b % 2 == 0) { // kiểm tra a là số chẵn và b là số chẵn
         return a + b
-    } else if(a % 2 != 0 && b % 2 != 0) {
+    } else if(a % 2 != 0 && b % 2 != 0) { // kiểm tra a là số lẻ và b là số lẻ
         return a - b
-    } else if(a % 2 == 0 && b % 2 != 0) {
+    } else if(a % 2 == 0 && b % 2 != 0) { // kiểm tra a là số chẵn và b là số lẻ
         return a
-    } else if(a % 2 != 0 && b % 2 == 0) {
+    } else if(a % 2 != 0 && b % 2 == 0) { // kiểm tra là số lẻ và b là số chẵn
         return b
     }
 }
@@ -617,3 +617,79 @@ var result28 = find3(13217648237, 1, 1231) // undefined
 console.log(result28)
 var result29 = find3(887, 51243, 123) // undefined
 console.log(result29)
+
+
+
+console.log('================================================================')
+
+// cho 1 function update() với 2 tham số, array và index, 
+// thay đổi giá trị value tại vị trí index thành -1 và trả về array
+
+// arr1 = [1, 5, 1, 3, 13, 87]
+// update(arr1, 3)
+// arr2 = [1, 5, 1, 3, 13, 87]
+// update(arr2, 9)
+
+function update(array, index) {
+    // Tạo for để duyệt tất cả index trong mảng
+    for(let i = 0; i < array.length; i++) {
+        // Tạo if để kiểm tra value trong mảng có bằng với value tại vị trí index hay không
+        // array[i]
+        if(i == index) { 
+            // Thay số -1 vào value bằng với value tại vị trí index
+            array.splice(i, 1, -1)
+        }
+    }
+    return array
+}
+
+arr1 = [1, 5, 1, 3, 13, 87] // array.splice(3, 1, -1)
+var result30 = update(arr1, 3)
+console.log(result30)
+arr2 = [1, 5, 1, 3, 13, 87]
+var result31 = update(arr2, 9)
+console.log(result31)
+
+function update1(array, index) {
+   var thayValue = array.splice(3, 1, -1)
+    return thayValue
+}
+
+arr1 = [1, 5, 1, 3, 13, 87] // array.splice(3, 1, -1)
+var result32 = update1(arr1, 3)
+console.log(result32)
+// arr2 = [1, 5, 1, 3, 13, 87]
+// var result33 = update1(arr2, 9)
+// console.log(result33)
+console.log('-----------------------------------------------------------------')
+
+// cho 1 function update() với tham số, là array,
+// nếu độ dài của array là lẻ thì đổi value thành -1 tại index là chính giữa của array đó.
+// nếu độ dài là số  chẵn thì thêm vào đầu của array -1
+// và trả về array đó.
+// arr1 = [1, 5, 1, 3, 13, 87]
+// update(arr1)
+// arr2 =  [1, 5, 1, 6 ,3, 13, 87]
+// update(arr2)
+
+function update1(array) {
+    // Tạo biến để hứng độ dài của array
+    var doDai = array.length
+        // Tạo if để kiểm tra độ dài của mảng là số chẵn hay lẻ
+            if(doDai % 2 != 0) {
+                var tinhDodai = doDai % 2 + 2 // Biến tạm để hứng để kết quả tính index chính giữa
+                // Thay -1 vào value của index chính giữa của mảng 
+                array.splice(tinhDodai , 1, -1) 
+            } else if(doDai % 2 == 0) {
+                // Thêm -1 vào đầu mảng
+                array.unshift(-1)
+            }
+            return array
+        }
+
+arr1 = [1, 5, 1, 3, 13, 87]
+var result34 = update1(arr1)
+console.log(result34)
+arr2 =  [1, 5, 1, 6, 3, 13, 87]
+var result35 = update1(arr2)
+console.log(result35)
