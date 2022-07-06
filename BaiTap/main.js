@@ -650,17 +650,28 @@ arr2 = [1, 5, 1, 3, 13, 87]
 var result31 = update(arr2, 9)
 console.log(result31)
 
-function update1(array, index) {
-   var thayValue = array.splice(3, 1, -1)
-    return thayValue
-}
+console.log('**************************************************************')
 
-arr1 = [1, 5, 1, 3, 13, 87] // array.splice(3, 1, -1)
-var result32 = update1(arr1, 3)
-console.log(result32)
-// arr2 = [1, 5, 1, 3, 13, 87]
-// var result33 = update1(arr2, 9)
-// console.log(result33)
+
+function update2(array, index) {
+    if(array.length > index && index == 0) {
+        array.splice(index, 1, -1)
+    }
+        return array
+}
+// index = 9 => array.splice(1, 1, -1)
+
+
+// arr3 = [1, 5, 1, 3, 13, 87] // array.splice(3, 1, -1)
+// var result32 = update2(arr3, 3)
+// console.log(result32)
+arr5 = [1, 5, 1, 3, 13, 87] // 1, 5, 1, 3, 13, 87
+var result33 = update2(arr5, -9)
+console.log(result33)
+arr4 = [1, 5, 1, 3, 13, 87]
+var result34 = update2(arr4, 0)
+console.log(result34)
+
 console.log('-----------------------------------------------------------------')
 
 // cho 1 function update() với tham số, là array,
@@ -688,8 +699,8 @@ function update1(array) {
         }
 
 arr1 = [1, 5, 1, 3, 13, 87]
-var result34 = update1(arr1)
-console.log(result34)
-arr2 =  [1, 5, 1, 6, 3, 13, 87]
-var result35 = update1(arr2)
+var result35 = update1(arr1)
 console.log(result35)
+arr2 =  [1, 5, 1, 6, 3, 13, 87]
+var result36 = update1(arr2)
+console.log(result36)
