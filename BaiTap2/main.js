@@ -1,52 +1,46 @@
-// cho 1 function find() có 2 tham số, array và index, 
-// nếu index và giá trị của index là số chẵn thì tính tổng giá trị trong array,
-// nếu không thì trả về tổng giữa index và độ dài của array.
+// cho 1 function, find() có 1 tham số  là tháng,
+// nhập 1 số bất kì và trả về số ngày trong tháng đó. 
+// vd: tháng 7 là 31 ngày. nếu k có tháng tồn tại trả về  -1
 
-
-// arr1 = [4, 7,22,65,87,34, 9]
-// find(arr1, 2)
-
-// find(arr1, 5)
-
-
-function find(array, index) {
-    var sum = 0
-    // Tạo if để xác định index và giá trị của index là số chẵn hay không
-        if(index % 2 == 0 && array[index] % 2 == 0) { // index và giá trị ứng với index đó là số chẵn
-            array.forEach(function(value){ // tính tổng giá trị trong array
-                sum = sum + value;
-            }) 
-        } else { // index và giá trị ứng với index đó là số lẻ
-            sum = index + array.length // tính tổng giữa index và độ dài của array
-        }
-        return sum
-    }
-
-
-arr1 = [4, 7, 22, 65, 87, 34, 9]
-var result = find(arr1, 2)
-console.log(result)
-var result1 = find(arr1, 5)
-console.log(result1)
-
-console.log('---------------------------------------------------------------------')
-
-function find1(array, index) {
-    var sum = 0
-    // Tạo if để xác định index và giá trị của index là số chẵn hay không
-    if(index % 2 == 0 && array[index] % 2 == 0) {
-    for(let i = 0; i < array.length; i++) {
-            sum = sum + array[i]
-    }
+function find(thang) {
+    if(thang == 1) {
+        return '31 ngày'
+    } else if(thang == 2) {
+        return '30 ngày'
+    } else if(thang == 3) {
+        return '31 ngày'
+    } else if(thang == 4) {
+        return '30 ngày'
+    } else if(thang == 5) {
+        return '31 ngày'
+    } else if(thang == 6) {
+        return '30 ngày'
+    } else if(thang == 7) {
+        return '31 ngày'
+    } else if(thang == 8) {
+        return '31 ngày'
+    } else if(thang == 9) {
+        return '30 ngày'
+    } else if(thang == 10) {
+        return '31 ngày'
+    } else if(thang == 11) {
+        return '30 ngày'
+    } else if(thang == 12) {
+        return '31 ngày'
     } else {
-        sum = index + array.length
+        return -1
     }
-    return sum
 }
 
+var result = find(8)
+console.log(result)
 
-arr1 = [4, 7, 22, 65, 87, 34, 9]
-var result2 = find1(arr1, 2)
-console.log(result2)
-var result3 = find1(arr1, 5)
-console.log(result3)
+
+
+
+// Viết chương trình để tính cước điện thoại bàn cho một hộ gia đình với các thông số như sau:
+// – Phí thuê bao bắt buộc là 25 nghìn.
+// – 600 đồng cho mỗi gọi của 50 phút đầu tiên.
+// – 400 đồng cho mỗi phút gọi của 150 phút tiếp theo.
+// – 200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.
+
