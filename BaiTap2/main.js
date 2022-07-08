@@ -24,12 +24,30 @@ console.log(result2)
 
 
 
-// Viết chương trình để tính cước điện thoại bàn cho một hộ gia đình với các thông số như sau:
-// – Phí thuê bao bắt buộc là 25 nghìn.
-// – 600 đồng cho mỗi gọi của 50 phút đầu tiên.
-// – 400 đồng cho mỗi phút gọi của 150 phút tiếp theo.
-// – 200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.
+// cho 1 function findDuplicate(), co 2 tham so array va number,
+// trả về tổng số trùng lặp giữa các giá trị trong array và number.
 
-// số phút 100 -> output = 75000 (30000 + 20000)
-// số phút 250 -> output = 125000 (30000 + 60000 + 10000)
+// arr1 = [2, 43, 11, 7, 34, 7, 34, 5, 11]
+// findDuplicate(arr1, 7) => kết quả là 2
+
+// arr2 = [2, 11, 11, 7, 34, 7, 34, 5, 11]
+// findDuplicate(arr2, 11) => kết quả là 3
+
+function findDuplicate(array, number) {
+    var sum = 0 // biến hứng kết quả của tổng số trùng lặp giữa các giá trị trong array và number
+    for(let i = 0; i < array.length; i++) { // for để duyệt tất cả index trong mảng
+        if(array[i] == number) { // if để xác định giá trị trong array có bằng với number đã cho không
+            sum = sum + 1
+        }
+    }
+    return sum
+}
+
+
+arr1 = [2, 43, 11, 7, 34, 7, 34, 5, 11, 34, 34]
+var result3 = findDuplicate(arr1,34)
+console.log(result3)
+arr2 = [2, 11, 11, 7, 34, 7, 34, 5, 11]
+var result4 = findDuplicate(arr2, 11)
+console.log(result4)
 
