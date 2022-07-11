@@ -150,25 +150,26 @@ console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
 
 function find3(array) {
     // tạo biến tạm để ví dụ số lớn nhất là số đầu tiên của mảng
-    var max = array[0];
+    var max = array[0]
     // dùng forEach để lấy các phần tử trong mảng theo thứ tự
     array.forEach(function(value) {
+        // tạo if để so sánh từng giá trị trong mảng với giá trị đầu tiên để tìm giá trị lớn nhất
         if(max < value) {
-            max = value
+            max = value // thay đổi giá trị lớn nhất nếu tìm ra số lớn hơn
         }
-    });
+    })
     return max
 }
 
 arr1 = [4, 22, 657, 111, 888, 23, 1]
-var result14 = find3(arr1)
-console.log(result14)
-arr2 = [4, 22, 9876, 111, -3, 23, 1]
-var result15 = find3(arr2)
-console.log(result15)
-arr3 = [4, 22, 7, 111, 1000, 23, 10]
-var result16 = find3(arr3)
+var result16 = find3(arr1)
 console.log(result16)
+arr2 = [4, 22, 9876, 111, -3, 23, 1]
+var result17 = find3(arr2)
+console.log(result17)
+arr3 = [4, 22, 7, 111, 1000, 23, 10]
+var result18 = find3(arr3)
+console.log(result18)
 
 console.log('****************************************************************8')
 // cho 1 function find2(), với tham số là array,
@@ -200,3 +201,23 @@ console.log(result14)
 arr3 = [4, 22, 7, 111, 888, 23, 10]
 var result15 = find2(arr3)
 console.log(result15)
+
+console.log('-------------------------------------------------------------')
+
+// Viết chương trình JavaScript để tính tổng của hai số nguyên đã cho. 
+// Nếu hai giá trị giống nhau thì trả về gấp ba tổng của chúng.
+
+function tong(a, b) {
+        var sum = a + b // tạo biến để hứng kết quả tính tổng của hai số nguyên
+        if(a == b) { // tạo if để kiểm tra giá trị của a có bằng giá trị của b không
+            sum = sum * 3
+        }
+    return sum
+}
+    
+var result19 = tong(6, 6)
+console.log(result19)    
+var result19 = tong(2, 5)
+console.log(result19)    
+var result19 = tong(14, 14)
+console.log(result19)
