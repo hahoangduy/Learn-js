@@ -51,3 +51,84 @@ arr2 = [2, 11, 11, 7, 34, 7, 34, 5, 11]
 var result4 = findDuplicate(arr2, 11)
 console.log(result4)
 
+
+console.log('==================================================================')
+
+// cho 1 function getElement(), với 3 tham số  array, number1, number2. 
+// lấy giá trị của array tại vị trí number1, so sánh giá trị vừa tìm được với number2,
+// nếu chúng bằng nhau trả về  true, nếu không trả về false.
+
+
+// arr1 = [3, 1, 63, 65, 7, 213, 4, 123]
+// getElement(arr1, 2, 2)
+// getElement(arr1, 6, 4)
+// getElement(arr1, 4, 4)
+
+function getElement(array, number1, number2) {
+    if(array[number1] == number2) { // so sách giá trị của array tại index number1 có bằng với number2 không
+        return true // bằng nhau trả về true
+    } else {
+        return false // không bằng trả về false
+    }
+}
+
+arr1 = [3, 1, 63, 65, 7, 213, 4, 123]
+var result5 = getElement(arr1, 2, 2)
+console.log(result5)
+var result6 = getElement(arr1, 6, 4)
+console.log(result6)
+var result7 = getElement(arr1, 4, 4)
+console.log(result7)
+
+console.log('----------------------------------------------------------------------')
+
+// cho 1 function runLogic(), với 2 tham số, array và charactor, 
+// nối chuỗi array với nhau và nối với charactor ở vị trí chẵn và trả về kết quả
+
+
+// arr1 = ["1", "5", "123", "daa", "97"]
+// runLogic(arr1, " <> ")
+
+
+function runLogic(array, charactor) {
+    // tạo biến hứng chuỗi nối
+    var noiChuoi = ''
+    // tạo for để duyệt tất cả phần tử trong mảng
+    for(let i = 0; i < array.length; i++) {
+        noiChuoi= noiChuoi + array[i]
+        if(i % 2 == 0) { // kiểm tra index là số chẵn hay không
+            noiChuoi = noiChuoi + charactor // là số chẵn thì nối thêm charactor
+        }
+    }
+    return noiChuoi
+}
+
+arr1 = ["1", "5", "123", "daa", "97"]
+var result8 = runLogic(arr1, " <> ")
+console.log(result8)
+
+console.log('++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+
+// cho 1 function find1(), với tham số là array,
+// 	tìm giá trị lớn nhất trong array đó và trả về
+
+
+// arr1 = [4,22, 657, 111, 888, 23, 1]
+// find(arr1) => 888
+
+function find1(array) {
+    // tạo biến tạm để ví dụ số lớn nhất là số đầu tiên của mảng
+    var max = array[0];
+    // tạo for để duyệt tất cả phần tử trong mảng
+    for(let i = 0; i < array.length; i++) {
+        // tạo if để so sánh từng giá trị trong mảng với giá trị đầu tiên để tìm giá trị lớn nhất
+        if (max < array[i]) { 
+            max = array[i]; // thay đổi giá trị lớn nhất nếu tìm ra số lớn hơn
+        }
+    }
+    return max
+}
+
+arr1 = [4, 22, 657, 111, 888, 23, 1]
+var result9 = find1(arr1)
+console.log(result9)
