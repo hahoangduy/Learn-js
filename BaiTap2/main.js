@@ -221,3 +221,70 @@ var result19 = tong(2, 5)
 console.log(result19)    
 var result19 = tong(14, 14)
 console.log(result19)
+
+
+// Viết chương trình để tính cước điện thoại bàn cho một hộ gia đình với các thông số như sau:
+// Phí thuê bao bắt buộc là 25 nghìn.
+// 600 đồng cho mỗi gọi của 50 phút đầu tiên.
+// 400 đồng cho mỗi phút gọi của 150 phút tiếp theo.
+// 200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.
+
+function phiDienThoai(tongSoPhut) {
+    let tongTien = 25000
+    let soPhutConLai = tongSoPhut
+
+    // 50 phút đầu tiên
+    if (soPhutConLai >= 50) {
+      tongTien += 50 * 600
+      soPhutConLai = soPhutConLai - 50
+    } else {
+      tongTien += soPhutConLai * 600
+      soPhutConLai = 0
+    }
+
+    // 150 phút tiếp theo
+    if (soPhutConLai >= 150) {
+      tongTien += 150 * 400
+      soPhutConLai = soPhutConLai - 150
+    } else {
+      tongTien += soPhutConLai * 400
+      soPhutConLai = 0
+    }
+
+    // từ 200 phút đầu tiên trở đi
+    // lưu ý: đề bài hơi lừa chút, hãy để ý đề bài ở chỗ "50 phút đầu tiên, 150 phút tiếp theo, 200 phút đầu tiên"
+    tongTien += soPhutConLai * 200
+
+    console.log({
+      tongTien
+    })
+  }
+  
+  phiDienThoai(60)
+
+
+//   cho 1 function, find() có tham số là array,
+//   tính tổng toàn bộ giá trị của array,
+//   nếu tổng bằng số chẵn, thay đổi value = -1 ở các index chẵn
+//   nếu tổng bằng số  lẻ, thay đổi value = -1 ở các index lẻ
+//   và trả về array
+  
+//   arr1 = [1, 6, 2, 99, 324, 1, 23, 64]
+//   find(arr1) > -1, 6, -1, 99, -1, 1, -1, 64
+
+function find4(array) {
+    var sum = 0 // biến hứng kết quả của tổng toàn bộ giá trị của array
+    for(let i = 0; i < array.length; i++) { // for để duyệt tất cả phần tử trong mảng
+        sum = sum + array[i]
+        if(sum % 2 == 0) { // if để xác định tổng là số chẵn hay số lẻ
+            if(i % 2 == 0) {
+                array.splice(i, 1, -1)
+            }
+        } 
+    }
+    return array
+}
+
+arr1 = [1, 6, 2, 99, 324, 1, 23, 64]
+var result20 = find(arr1)
+console.log(result20)
