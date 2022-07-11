@@ -141,21 +141,51 @@ console.log(result11)
 
 console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
 
+// cho 1 function find1(), với tham số là array,
+// 	tìm giá trị lớn nhất trong array đó và trả về
+
+
+// arr1 = [4,22, 657, 111, 888, 23, 1]
+// find(arr1)
+
+function find3(array) {
+    // tạo biến tạm để ví dụ số lớn nhất là số đầu tiên của mảng
+    var max = array[0];
+    // dùng forEach để lấy các phần tử trong mảng theo thứ tự
+    array.forEach(function(value) {
+        if(max < value) {
+            max = value
+        }
+    });
+    return max
+}
+
+arr1 = [4, 22, 657, 111, 888, 23, 1]
+var result14 = find3(arr1)
+console.log(result14)
+arr2 = [4, 22, 9876, 111, -3, 23, 1]
+var result15 = find3(arr2)
+console.log(result15)
+arr3 = [4, 22, 7, 111, 1000, 23, 10]
+var result16 = find3(arr3)
+console.log(result16)
+
+console.log('****************************************************************8')
 // cho 1 function find2(), với tham số là array,
 // 	tìm giá trị nhỏ nhất trong array đó và trả về
 
 
 // arr1 = [4, 22, 657, 111, 888, 23, 1]
-// find(arr1)
+// find2(arr1)
 
 function find2(array) {
-    // tạo biến tạm để ví dụ số bé nhất là số đầu tiên của mảng
+    // tạo biến tạm để ví dụ số nhỏ nhất là số đầu tiên của mảng
     var min = array[0]
     // tạo for để duyệt tất cả phần tử trong mảng
     for(let i  = 0; i < array.length; i++) {
-        // tạo if để so sánh từng giá trị trong mảng với giá trị đầu tiên để tìm giá trị bé nhất
+        // tạo if để so sánh từng giá trị trong mảng với giá trị đầu tiên để tìm giá trị nhỏ nhất
         if(min > array[i]) {
-            min = array[i]
+            min = array[i] // thay đổi giá trị nhỏ nhất nếu tìm ra số nhỏ hơn
         }
     }
     return min
