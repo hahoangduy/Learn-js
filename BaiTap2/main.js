@@ -132,3 +132,41 @@ function find1(array) {
 arr1 = [4, 22, 657, 111, 888, 23, 1]
 var result9 = find1(arr1)
 console.log(result9)
+arr2 = [4, 22, 657, 111, 888, 23, 999]
+var result10 = find1(arr2)
+console.log(result10)
+arr3 = [4, 1000, 657, 111, 888, 23, 1]
+var result11 = find1(arr3)
+console.log(result11)
+
+console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+
+// cho 1 function find2(), với tham số là array,
+// 	tìm giá trị nhỏ nhất trong array đó và trả về
+
+
+// arr1 = [4, 22, 657, 111, 888, 23, 1]
+// find(arr1)
+
+function find2(array) {
+    // tạo biến tạm để ví dụ số bé nhất là số đầu tiên của mảng
+    var min = array[0]
+    // tạo for để duyệt tất cả phần tử trong mảng
+    for(let i  = 0; i < array.length; i++) {
+        // tạo if để so sánh từng giá trị trong mảng với giá trị đầu tiên để tìm giá trị bé nhất
+        if(min > array[i]) {
+            min = array[i]
+        }
+    }
+    return min
+}
+
+arr1 = [4, 22, 657, 111, 888, 23, 1]
+var result13 = find2(arr1)
+console.log(result13)
+arr2 = [4, 22, 657, 111, -3, 23, 1]
+var result14 = find2(arr2)
+console.log(result14)
+arr3 = [4, 22, 7, 111, 888, 23, 10]
+var result15 = find2(arr3)
+console.log(result15)
