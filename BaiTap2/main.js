@@ -388,3 +388,24 @@ function daoNguoc(array) {
 arr1 = [1, 2, 3, 4, 5, 6]
 var result28 = daoNguoc(arr1)
 console.log(result28)
+
+// cho 1 function, hinhChuNhat(), với 2 tham số  doc, ngang
+// vẽ hình chữ nhật với 2 tham số trên
+
+// hinhChuNhat(3,5)
+
+// * * * * *
+// * * * * *
+// * * * * *
+
+function hinhChuNhat(doc, ngang) {
+    var veHinh = ''
+    for(let i = 0; i < ngang; i++) {
+        veHinh += '* '
+    }
+    for(let j = 0; j < doc; j++) {
+        console.log(veHinh)
+    }
+}
+
+var result29 = hinhChuNhat(3, 5)
