@@ -266,25 +266,63 @@ function phiDienThoai(tongSoPhut) {
 //   cho 1 function, find() có tham số là array,
 //   tính tổng toàn bộ giá trị của array,
 //   nếu tổng bằng số chẵn, thay đổi value = -1 ở các index chẵn
-//   nếu tổng bằng số  lẻ, thay đổi value = -1 ở các index lẻ
+//   nếu tổng bằng số lẻ, thay đổi value = -1 ở các index lẻ
 //   và trả về array
   
 //   arr1 = [1, 6, 2, 99, 324, 1, 23, 64]
-//   find(arr1) > -1, 6, -1, 99, -1, 1, -1, 64
+//   find(arr1) -> -1, 6, -1, 99, -1, 1, -1, 64
 
 function find4(array) {
     var sum = 0 // biến hứng kết quả của tổng toàn bộ giá trị của array
     for(let i = 0; i < array.length; i++) { // for để duyệt tất cả phần tử trong mảng
         sum = sum + array[i]
         if(sum % 2 == 0) { // if để xác định tổng là số chẵn hay số lẻ
-            if(i % 2 == 0) {
+            if(array[i] % 2 == 0) {
                 array.splice(i, 1, -1)
             }
-        } 
+        }
     }
     return array
 }
 
 arr1 = [1, 6, 2, 99, 324, 1, 23, 64]
-var result20 = find(arr1)
+var result20 = find4(arr1)
 console.log(result20)
+
+
+/*
+cho 1 function find2() có 3 tham số a, b, c đều là number
+kiểm tra a, b là số chẵn ; c là số lẻ thì trả về a + b
+kiểm tra a, c chẵn; b là số lẻ thì trả về a + c
+*/
+
+function find5(a, b, c) {
+    // Tạo if để kiểm tra a, b, c là số chẵn hay lẻ
+    if(timSo(a)) { // a là số chẵn
+        if(timSo(b)) { // b là só chẵn và a là số chẵn
+            if(!timSo(c)) { // c là số lẻ và a, b là số chẵn
+                return a + b
+            }
+        } else { // b là số lẻ 
+            if(timSo(c)) { // c là số chẵn và b là số lẻ
+                return a + c
+            }
+        }
+    }
+    return -1
+}
+
+function timSo(so) {
+    if(so % 2 == 0) {
+        return true
+    } else {
+        false
+    }
+}
+
+var result21 = find5(6, 8, 1) // 14
+console.log(result21)
+var result22 = find5(13217648237, 1, 1231) // -1
+console.log(result22)
+var result23 = find5(887, 51243, 123) // -1
+console.log(result23)

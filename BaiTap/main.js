@@ -297,7 +297,7 @@ console.log(result8)
 
     console.log('========================================================================')
 
-// cho 1 function findIndex(), với 2 tham số, array và number,
+// cho 1 function findIndex1(), với 2 tham số, array và number,
 // tìm index và trả về, nếu index là số  lẻ và number đã cho chia hết cho value của index.
 // nếu k trả về -1.
 
@@ -470,8 +470,8 @@ console.log('-------------------------------------------------------------------
 
 
     var a = 10
-var b = 10
-let greeting;
+    var b = 10
+    let greeting;
 if (a < b) {
   greeting = "Good morning";
 } else if (a == b) {
