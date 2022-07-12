@@ -303,7 +303,7 @@ function timTongSoChan(so) {
 arr1 = [1, 6, 2, 99, 324, 1, 23, 64] // -1, 6, -1, 99, -1, 1, -1, 63
 var result20 = find4(arr1)
 console.log(result20)
-arr2 = [55, 7, 2, 84, 74, 1, 83, 43] // 55, -1, 2, -1, 324, -1, 23, -1
+arr2 = [55, 7, 2, 84, 74, 1, 83, 43] // 55, -1, 2, -1, 74, -1, 83, -1
 var result21 = find4(arr2)
 console.log(result21)
 
@@ -346,3 +346,31 @@ var result23 = find5(13217648237, 1, 1231) // -1
 console.log(result23)
 var result24 = find5(887, 51243, 123) // -1
 console.log(result24)
+
+/**
+   * Đề bài: Nhập vào một số nguyên dương n,
+   * viết chương trình tính S = 1 + 1/2 + 1/3 + … + 1/n
+  */
+
+//viết chương trình tính S = 1 + 1/2 + 1/3 + … + 1/n
+
+// cho 1 function sum(), với tham số  là n,
+// tính tổng của biểu thức S = 1 + 1/2 + 1/3 + … 1/n-1 + 1/n, và trả về kết quả.
+
+
+// sum(6) => 2.45
+
+function sum(n) {
+    var S = 0 // biến hứng tổng của biểu thức
+    for(let i = 1; i <= n; i++){ // dùng để duyệt tất cả phần tử
+        S = S + 1/i;
+      }
+      return S
+}
+
+var result25 = sum(6)
+console.log(result25)
+var result26 = sum(12)
+console.log(result26)
+var result27 = sum(9)
+console.log(result27)
