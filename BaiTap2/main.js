@@ -272,22 +272,42 @@ function phiDienThoai(tongSoPhut) {
 //   arr1 = [1, 6, 2, 99, 324, 1, 23, 64]
 //   find(arr1) -> -1, 6, -1, 99, -1, 1, -1, 64
 
+console.log('=================================================')
+
 function find4(array) {
-    var sum = 0 // biến hứng kết quả của tổng toàn bộ giá trị của array
-    for(let i = 0; i < array.length; i++) { // for để duyệt tất cả phần tử trong mảng
-        sum = sum + array[i]
-        if(sum % 2 == 0) { // if để xác định tổng là số chẵn hay số lẻ
-            if(array[i] % 2 == 0) {
-                array.splice(i, 1, -1)
+    var sum = 0 // biến hứng kết quả của tổng toàn bộ giá trị
+    for(let i = 0; i < array.length; i++) { // duyệt tất cả các phần tử trong mảng
+        sum = sum + array[i]   
+    }
+        for(let i = 0; i < array.length; i++) { // duyệt tất cả các phần tử trong mảng
+            if(timTongSoChan(sum)) { // tổng là số chẵn
+                if(timTongSoChan(i)) { // index là số chẵn 
+                    array.splice(i, 1, -1)
+                }
+            } else {
+                if(!timTongSoChan(i)) {
+                    array.splice(i, 1, -1)
+                }
             }
         }
-    }
     return array
 }
+function timTongSoChan(so) {
+    if(so % 2 == 0) {
+        return true
+    } else {
+       return false
+    }
+}
 
-arr1 = [1, 6, 2, 99, 324, 1, 23, 64]
+arr1 = [1, 6, 2, 99, 324, 1, 23, 64] // -1, 6, -1, 99, -1, 1, -1, 63
 var result20 = find4(arr1)
 console.log(result20)
+arr2 = [55, 7, 2, 84, 74, 1, 83, 43] // 55, -1, 2, -1, 324, -1, 23, -1
+var result21 = find4(arr2)
+console.log(result21)
+
+console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
 
 
 /*
@@ -298,13 +318,13 @@ kiểm tra a, c chẵn; b là số lẻ thì trả về a + c
 
 function find5(a, b, c) {
     // Tạo if để kiểm tra a, b, c là số chẵn hay lẻ
-    if(timSo(a)) { // a là số chẵn
-        if(timSo(b)) { // b là só chẵn và a là số chẵn
-            if(!timSo(c)) { // c là số lẻ và a, b là số chẵn
+    if(timSoChan(a)) { // a là số chẵn
+        if(timSoChan(b)) { // b là só chẵn và a là số chẵn
+            if(!timSoChan(c)) { // c là số lẻ và a, b là số chẵn
                 return a + b
             }
         } else { // b là số lẻ 
-            if(timSo(c)) { // c là số chẵn và b là số lẻ
+            if(timSoChan(c)) { // c là số chẵn và b là số lẻ
                 return a + c
             }
         }
@@ -312,7 +332,7 @@ function find5(a, b, c) {
     return -1
 }
 
-function timSo(so) {
+function timSoChan(so) {
     if(so % 2 == 0) {
         return true
     } else {
@@ -320,9 +340,9 @@ function timSo(so) {
     }
 }
 
-var result21 = find5(6, 8, 1) // 14
-console.log(result21)
-var result22 = find5(13217648237, 1, 1231) // -1
+var result22 = find5(6, 8, 1) // 14
 console.log(result22)
-var result23 = find5(887, 51243, 123) // -1
+var result23 = find5(13217648237, 1, 1231) // -1
 console.log(result23)
+var result24 = find5(887, 51243, 123) // -1
+console.log(result24)
