@@ -410,3 +410,34 @@ function hinhChuNhat(doc, ngang) {
 }
 
 var result29 = hinhChuNhat(3, 5)
+
+console.log('============================================================')
+
+// Đài khí tượng thủy văn Việt Nam đang thống kê lượng mưa của một số tháng để dự báo thời tiết trong thời gian sắp tới.
+// Hãy tìm và in ra thứ tự các tháng có lượng mưa lớn hơn lượng mưa trung bình của các tháng được thống kê. 
+// Đơn vị của lượng mưa tính là mm.
+
+// Ví dụ:
+// Lượng mưa trung bình các tháng: 1 3 2
+// Đáp án: 2 (vì tháng thứ 2 có lượng mưa là 3, cao hơn trung bình 3 tháng trên)
+
+function timThang(array) {
+    var sum = 0 // biến hứng tổng lượng mưa trung bình các tháng
+    var array2 = []
+    for(let i = 0; i < array.length; i++) { // duyệt tất cả các phần tử trong mảng
+        sum += array[i]
+    }
+
+    var trungBinh = sum / array.length // biến dùng để tính lượng mưa trung bình
+    for(let i = 0; i < array.length; i++) { // duyệt tất cả các phần tử trong mảng
+        if(array[i] > trungBinh) { // so sánh lượng mưa trung bình với lượng mưa mỗi tháng
+            var thang = i + 1 // tìm tháng
+            array2.push(thang)
+        }
+    }
+    return array2
+}
+
+arr1 = [1, 3, 2, 4, 6]
+var result30 = timThang(arr1)
+console.log(result30)
