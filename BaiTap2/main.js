@@ -405,6 +405,7 @@ function hinhChuNhat(doc, ngang) {
     }
     for(let j = 0; j < doc; j++) {
         console.log(veHinh)
+        console.log('')
     }
 }
 
