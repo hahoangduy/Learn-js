@@ -284,8 +284,8 @@ function find4(array) {
                 if(timTongSoChan(i)) { // index là số chẵn 
                     array.splice(i, 1, -1)
                 }
-            } else {
-                if(!timTongSoChan(i)) {
+            } else { // tổng là số lẻ
+                if(!timTongSoChan(i)) { // index là số lẻ
                     array.splice(i, 1, -1)
                 }
             }
