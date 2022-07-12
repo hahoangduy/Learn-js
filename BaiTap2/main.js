@@ -280,24 +280,17 @@ function find4(array) {
         sum = sum + array[i]   
     }
         for(let i = 0; i < array.length; i++) { // duyệt tất cả các phần tử trong mảng
-            if(timTongSoChan(sum)) { // tổng là số chẵn
-                if(timTongSoChan(i)) { // index là số chẵn 
+            if(timSoChan(sum)) { // tổng là số chẵn
+                if(timSoChan(i)) { // index là số chẵn 
                     array.splice(i, 1, -1)
                 }
             } else { // tổng là số lẻ
-                if(!timTongSoChan(i)) { // index là số lẻ
+                if(!timSoChan(i)) { // index là số lẻ
                     array.splice(i, 1, -1)
                 }
             }
         }
     return array
-}
-function timTongSoChan(so) {
-    if(so % 2 == 0) {
-        return true
-    } else {
-       return false
-    }
 }
 
 arr1 = [1, 6, 2, 99, 324, 1, 23, 64] // -1, 6, -1, 99, -1, 1, -1, 63
@@ -374,3 +367,24 @@ var result26 = sum(12)
 console.log(result26)
 var result27 = sum(9)
 console.log(result27)
+
+console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+
+// cho 1 function, daoNguoc() với tham số array, 
+// trả về đảo ngược của array trên
+
+// arr1=[1, 2, 3, 4, 5, 6]
+// daonguoc(arr1) => 6, 5, 4, 3, 2, 1
+
+function daoNguoc(array) {
+    var array2 = [] // biến hứng giá trị được đảo ngược ở mảng 1
+    var lastIndex = array.length -1 // tìm index cuối của mảng
+    for(let i = lastIndex; i >= 0; i--) { // dùng để duyệt tất cả phần tử từ cuối quay về đầu
+        array2.push(array[i]) // dùng để thêm giá trị vào mảng hứng
+    }
+    return array2
+}
+
+arr1 = [1, 2, 3, 4, 5, 6]
+var result28 = daoNguoc(arr1)
+console.log(result28)
