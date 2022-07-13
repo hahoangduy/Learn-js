@@ -496,3 +496,57 @@ console.log('-------------------------------------------------------------------
 
 // arr1 = [54, 12, 77, 11, 2, 56, 13]
 // arr2 = [6, 23, 45, 1, 3, 6]
+// arr3 = [4, 12, 25, 41, 54, 2]
+
+function find7(arr1, arr2) {
+    var sum = 0 // biến hứng tổng
+    for(let i = 0; i < arr1.length; i++) { // duyệt tất cả các phần tử trong mảng
+        sum += arr1[i] // tính tổng trong mảng 1
+    }
+    for(let i = 0; i < arr2.length; i++) { // duyệt tất cả các phần tử trong mảng
+        sum += arr2[i] // tính tổng trong mảng 2
+    }
+    for(let i = 0; i < arr3.length; i++) { // duyệt tất cả các phần tử trong mảng
+        sum += arr3[i] // tính tổng trong mảng 3
+    }
+    for(let i = 0; i < arr1.length; i++) { // duyệt tất cả các phần tử trong mảng
+        if(timSoChan(sum)) { // tổng là số chẵn
+            if(timSoChan(i)) { // index là số chẵn
+                arr1.splice(i, 1, -1)
+            }
+        } else { // tổng là số lẻ
+            if(!timSoChan(i)) { // index là số lẻ
+                arr1.splice(i, 1, -1)
+            }
+        }
+    }
+    for(let i = 0; i < arr2.length; i++) { // duyệt tất cả các phần tử trong mảng
+        if(timSoChan(sum)) { // tổng là số chẵn
+            if(timSoChan(i)) { // index là số chẵn
+                arr2.splice(i, 1, -1)
+            }
+        } else { // tổng là số lẻ
+            if(!timSoChan(i)) { // index là số lẻ
+                arr2.splice(i, 1, -1)
+            }
+        }
+    }
+    for(let i = 0; i < arr3.length; i++) { // duyệt tất cả các phần tử trong mảng
+        if(timSoChan(sum)) { // tổng là số chẵn
+            if(timSoChan(i)) { // index là số chẵn
+                arr3.splice(i, 1, -1)
+            }
+        } else { // tổng là số lẻ
+            if(!timSoChan(i)) { // index là số lẻ
+                arr3.splice(i, 1, -1)
+            }
+        }
+    }
+    console.log(arr1)
+    console.log(arr2)
+    console.log(arr3)
+}
+arr1 = [54, 12, 77, 11, 2, 56, 13] // 54, -1, 77, -1, 2, -1, 13 
+arr2 = [6, 23, 45, 1, 3, 4] //  6, -1, 45, -1, 3, -1
+arr3 = [4, 12, 25, 41, 54, 3] //  4, -1, 25, -1, 54, -1
+var result32 = find7(arr1, arr2, arr3)
