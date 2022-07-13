@@ -441,3 +441,42 @@ function timThang(array) {
 arr1 = [1, 3, 2, 4, 6]
 var result30 = timThang(arr1)
 console.log(result30)
+
+
+console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+
+// cho 1 function, find(), với 2 tham số  arr1, arr2,
+// nếu tổng của arr1 và arr2 là chẵn thì đổi giá trị thành -1 ở index chẵn của arr1 và arr2,
+// nếu tổng của arr1 và arr2 là lẻ thì đổi giá trị thành -1 ở index lẻ của arr1 và arr2,
+
+// arr1 = [54, 12, 77, 11, 2, 56, 13]
+// arr2 = [6, 23, 45, 1, 3, 6]
+
+function find6(arr1, arr2) {
+    var sum = 0 // biến hứng tổng arr1 và arr2
+    for(let i = 0; i < arr1.length; i++) { // duyệt tất cả các phần tử trong mảng
+        sum += arr1[i] // tính tổng trong mảng 1
+    }
+    for(let i = 0; i < arr2.length; i++) { // duyệt tất cả các phần tử trong mảng
+        sum += arr2[i] // tính tổng trong mảng 2
+    }
+    for(let i = 0; i < arr1.length && i < arr2.length; i++) { // duyệt tất cả các phần tử trong mảng
+        if(timSoChan(sum)) { // tổng là số chẵn
+            if(timSoChan(i)) { // index là số chẵn
+                arr1.splice(i, 1, -1)
+                arr2.splice(i, 1, -1)
+            }
+        } else { // tổng là số lẻ
+            if(!timSoChan(i)) { // index là số lẻ
+                arr1.splice(i, 1, -1)
+                arr2.splice(i, 1, -1)
+            }
+        }
+    }
+    console.log(arr1)
+    console.log(arr2)
+}
+
+arr1 = [54, 12, 77, 11, 2, 56, 13]
+arr2 = [6, 23, 45, 1, 3, 4]
+var result31 = find6(arr1, arr2)
