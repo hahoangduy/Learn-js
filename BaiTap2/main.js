@@ -378,7 +378,7 @@ console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
 
 function daoNguoc(array) {
     var array2 = [] // biến hứng giá trị được đảo ngược ở mảng 1
-    var lastIndex = array.length -1 // tìm index cuối của mảng
+    var lastIndex = array.length - 1 // tìm index cuối của mảng
     for(let i = lastIndex; i >= 0; i--) { // dùng để duyệt tất cả phần tử từ cuối quay về đầu
         array2.push(array[i]) // dùng để thêm giá trị vào mảng hứng
     }
@@ -535,3 +535,31 @@ function find7(arr1, arr2) {
 arr1 = [54, 12, 77, 11, 2, 56, 13] // 54, -1, 77, -1, 2, -1, 13 
 arr2 = [6, 23, 45, 1, 3, 4] //  -1, 23, -1, 1, -1, 4, -1
 var result32 = find7(arr1, arr2)
+
+
+console.log('-----------------------------------------------------------------------')
+
+// cho 1 function, sum() với tham số là array,
+// tính và thay đổi giá trị trong array như sau, value = value + value(index + 2)
+// và trả về arr
+
+// arr1= [2, 45, 1, 3, 11, 5] 11 => i = 4, length = 6
+// sum(arr1) => 3, 48, 12, 8, 11, 5
+
+function sum1(array) {
+    var array2 = []
+    var sum = 0
+    for(let i = 0; i < array.length; i++) {
+        var nextIndex = i + 2
+        if(nextIndex >= array.length) {
+            sum = array[i]
+        } else {
+            sum = array[i] + array[nextIndex]
+        }
+        array2.push(sum)
+    }
+    return array2
+}
+arr1= [2, 45, 1, 3, 11, 5]
+var result33 = sum1(arr1)
+console.log(result33)
