@@ -560,6 +560,12 @@ function sum1(array) {
     }
     return array2
 }
-arr1= [2, 45, 1, 3, 11, 5]
+arr1 = [2, 45, 1, 3, 11, 5]
 var result33 = sum1(arr1)
 console.log(result33)
+arr2 = [2, 15, 12, 34, 21, 53, 13, 15, 54]
+var result34 = sum1(arr2)
+console.log(result34)
+arr3 = [13, 43, 12, 35, 65, 51, 56 ,67, 13]
+var result35 = sum1(arr3)
+console.log(result35)
